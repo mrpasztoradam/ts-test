@@ -39,14 +39,12 @@ function App() {
       <div className="container">
         <nav>navbar</nav>
         <div id="sidebar">Sidebar</div>
-        <div id="content1">
-          <ul>
-            {TestData.map((item) => (
-              <li>
-                <Card data={item}></Card>
-              </li>
-            ))}
-          </ul>
+        <div id="smallcontent">
+          {TestData.map((item) => (
+            <div className="card">
+              <Card data={item}></Card>
+            </div>
+          ))}
         </div>
         {/* <div id="content1"></div>
         <div id="content2">
