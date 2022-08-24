@@ -10,6 +10,10 @@ let TestData = [
     length: 30,
   },
   {
+    fact: 'jkdsfélakjdklfjaklfjéalj',
+    length: 30,
+  },
+  {
     fact: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, doloribus nisi! Fugiat corporis tempore quas vel at dicta facilis. Dignissimos fugiat possimus nisi odio iste quod nemo ipsa totam tempore eveniet ut molestiae beatae, ab veniam, repellendus ad libero dolor ipsum error numquam consequatur reprehenderit aperiam pariatur voluptates! Ea, corrupti?',
     length: 300,
   },
@@ -46,20 +50,13 @@ function App() {
             </div>
           ))}
         </div>
-        {/* <div id="content1"></div>
-        <div id="content2">
+        <div id="bigcontent">{data && <Card data={data}></Card>}</div>
+        <div id="bigcontent2">
           <TextImage
-            title="Hello There!"
-            imgSrc="https://placehold.co/250"
+            title="Teszt"
+            imgSrc="https://placehold.co/300"
           ></TextImage>
         </div>
-        <div id="content3">
-          <TextImage
-            title="Hello There!"
-            imgSrc="https://placehold.co/250"
-          ></TextImage>
-        </div> */}
-        <div id="bigcontent">{data && <Card data={data}></Card>}</div>
       </div>
     </div>
   );

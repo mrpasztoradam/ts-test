@@ -44,6 +44,7 @@
 nav {
   background: #61dafb;
   grid-area: nav;
+  min-height: 60px;
 }
 
 #sidebar {
