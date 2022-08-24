@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import React, { Component } from 'react';
+import StyledButton from './StyledButton';
+import StyledParagraph from './StyledParagraph';
 
 type Props = {
   data: {
-    fact: string;
-    length: number;
+    fact?: string;
+    length?: number;
+    name?: string;
+    imgUrl?: string;
   };
 };
 
@@ -15,10 +19,20 @@ class Card extends Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <>
+        <img
+          className="card-image"
+          src={
+            this.props.data.imgUrl
+              ? this.props.data.imgUrl
+              : 'https://placehold.co/300'
+          }
+          alt=""
+        />
         <p>{this.props.data.fact}</p>
-        <p>{this.props.data.length}</p>
-      </div>
+        <StyledParagraph text={this.props.data.name}></StyledParagraph>
+        <StyledButton buttonText="Tesztelek"></StyledButton>
+      </>
     );
   }
 }
