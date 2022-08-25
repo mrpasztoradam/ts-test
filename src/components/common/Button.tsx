@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   background-color: #87bdd8;
   width: 150px;
   height: 50px;
@@ -16,20 +16,17 @@ const Button = styled.button`
   margin-bottom: 1rem;
 `;
 
-type Props = {
-  buttonText: string;
+interface IButton {
+  buttonText?: string;
+  className?: string;
+}
+
+const Button = ({ buttonText, className }: IButton) => {
+  return (
+    <>
+      <StyledButton className={className}>{buttonText}</StyledButton>
+    </>
+  );
 };
 
-type State = {};
-
-export default class StyledButton extends Component<Props, State> {
-  state = {};
-
-  render() {
-    return (
-      <>
-        <Button>{this.props.buttonText}</Button>
-      </>
-    );
-  }
-}
+export default Button;

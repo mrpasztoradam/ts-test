@@ -47,8 +47,8 @@ const CardContainer = () => {
       {error && <p>{error}</p>}
       {unis.length > 0 &&
         unis.map((university: Unis, index) => (
-          <div className="card">
-            <Card data={university}></Card>
+          <div className="card" key={index}>
+            <Card name={university.name} id={index}></Card>
           </div>
         ))}
     </>

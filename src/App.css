@@ -44,7 +44,13 @@
 nav {
   background: #61dafb;
   grid-area: nav;
-  min-height: 60px;
+  min-height: 120px;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: scale(1.05);
 }
 
 #sidebar {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Paragraph = styled.p<Props>`
+const Paragraph = styled.p<ITextImage>`
   padding: ${(props) => props.paddingSize || '16px'};
 `;
 
-const Image = styled.img<Props>`
+const Image = styled.img<ITextImage>`
   padding: ${(props) => props.paddingSize || '16px'};
 `;
 
@@ -14,24 +14,20 @@ const BorderImage = styled(Image)`
   border-color: black;
 `;
 
-type Props = {
+interface ITextImage {
   title?: string;
   imgSrc?: string;
   paddingSize?: string;
+}
+
+const TextImage = ({ title, imgSrc, paddingSize }: ITextImage) => {
+  return (
+    <div>
+      <Paragraph paddingSize="10px">{title}</Paragraph>
+      <Image paddingSize="10px" src={imgSrc} alt="" />
+      <BorderImage paddingSize="10px" src={imgSrc} alt="" />
+    </div>
+  );
 };
 
-type State = {};
-
-export default class TextImage extends Component<Props, State> {
-  state = {};
-
-  render() {
-    return (
-      <div>
-        <Paragraph paddingSize="10px">{this.props.title}</Paragraph>
-        <Image paddingSize="10px" src={this.props.imgSrc} alt="" />
-        <BorderImage paddingSize="10px" src={this.props.imgSrc} alt="" />
-      </div>
-    );
-  }
-}
+export default TextImage;
